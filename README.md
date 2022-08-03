@@ -35,3 +35,7 @@
   - メイン機能実装：8/10 ~ 9/15 
   - MVPリリース：9/15〆切り
   - 本番リリース：9月下旬
+
+
+### 画面遷移図
+[Figmaによる画面遷移図](https://www.figma.com/file/tB9FYyamcDmlHXOAkKnisY/RUNTEQ-PF?node-id=0%3A1)
