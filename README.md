@@ -39,3 +39,7 @@
 
 ### 画面遷移図
 [Figmaによる画面遷移図](https://www.figma.com/file/tB9FYyamcDmlHXOAkKnisY/RUNTEQ-PF?node-id=0%3A1)
+
+
+### ER図
+[![Image from Gyazo](https://i.gyazo.com/23bd2a755d108e69e4cf4faa6243db84.png)](https://gyazo.com/23bd2a755d108e69e4cf4faa6243db84)
