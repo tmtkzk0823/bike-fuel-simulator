@@ -42,4 +42,4 @@
 
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/23bd2a755d108e69e4cf4faa6243db84.png)](https://gyazo.com/23bd2a755d108e69e4cf4faa6243db84)
+[![Image from Gyazo](https://i.gyazo.com/3e48d8442961ac38e99e3d4a9b7d03bf.png)](https://gyazo.com/3e48d8442961ac38e99e3d4a9b7d03bf)
