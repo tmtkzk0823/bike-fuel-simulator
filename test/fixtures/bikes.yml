@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image: MyString
+  cruising_distance: 1
+  displacement: 1
+  manufacturer: one
+  illustration: one
+
+two:
+  name: MyString
+  image: MyString
+  cruising_distance: 1
+  displacement: 1
+  manufacturer: two
+  illustration: two
