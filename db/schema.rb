@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_073503) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_143659) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_073503) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "manufactures", force: :cascade do |t|
+  create_table "manufacturers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_073503) do
     t.index ["user_id"], name: "index_visited_places_on_user_id"
   end
 
-  add_foreign_key "bikes", "manufactures"
+  add_foreign_key "bikes", "manufacturers", column: "manufacture_id"
   add_foreign_key "user_bikes", "bikes"
   add_foreign_key "user_bikes", "users"
   add_foreign_key "visited_places", "places"
