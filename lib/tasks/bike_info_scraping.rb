@@ -7,6 +7,8 @@ require 'dotenv/load'
   manufacturers = ['HONDA', 'YAMAHA', 'KAWASAKI', 'SUZUKI']
   manufacturer_id = 0
   id = 0
+  bike_data = []
+
 
   manufacturers.each do |manufacturer|
     url = "#{ENV['REFERENCE_SOURCE_BIKE_DATA_URL']}/#{manufacturer}/"
@@ -65,7 +67,13 @@ require 'dotenv/load'
       
       id += 1
     
-      puts bike_data = [id, bike_name, bike_image, cruising_distance, displacement, bike_category, manufacturer_id]
+      bike_data << [id, bike_name, bike_image, cruising_distance, displacement, bike_category, manufacturer_id]
       sleep rand(1..2)
+    end
+  end
+
+  CSV.open("bike_data.csv", "w") do |csv|
+    bike_data.each do |bike|
+      csv << bike
     end
   end
