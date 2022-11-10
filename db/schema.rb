@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_143659) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_09_062604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_143659) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "manufacture_id"
+    t.bigint "illustration_id"
+    t.index ["illustration_id"], name: "index_bikes_on_illustration_id"
     t.index ["manufacture_id"], name: "index_bikes_on_manufacture_id"
   end
 
@@ -71,6 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_143659) do
     t.index ["user_id"], name: "index_visited_places_on_user_id"
   end
 
+  add_foreign_key "bikes", "illustrations"
   add_foreign_key "bikes", "manufacturers", column: "manufacture_id"
   add_foreign_key "user_bikes", "bikes"
   add_foreign_key "user_bikes", "users"
