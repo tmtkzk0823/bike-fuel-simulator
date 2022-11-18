@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_09_062604) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_11_034407) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,10 +21,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_062604) do
     t.integer "displacement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "manufacture_id"
+    t.bigint "manufacturer_id"
     t.bigint "illustration_id"
     t.index ["illustration_id"], name: "index_bikes_on_illustration_id"
-    t.index ["manufacture_id"], name: "index_bikes_on_manufacture_id"
+    t.index ["manufacturer_id"], name: "index_bikes_on_manufacturer_id"
   end
 
   create_table "illustrations", force: :cascade do |t|
@@ -74,7 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_062604) do
   end
 
   add_foreign_key "bikes", "illustrations"
-  add_foreign_key "bikes", "manufacturers", column: "manufacture_id"
+  add_foreign_key "bikes", "manufacturers"
   add_foreign_key "user_bikes", "bikes"
   add_foreign_key "user_bikes", "users"
   add_foreign_key "visited_places", "places"
