@@ -8,7 +8,13 @@ require 'dotenv/load'
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "#{ENV['CORS_URL']}"
+    # origins "#{ENV['CORS_URL']}"
+    if Rails.env.production?
+      origins 'https://bike-fuel-simulator.web.app/'
+    else
+      origins 'http://127.0.0.1:5173/'
+    end
+    
 
     resource "*",
       headers: :any,
