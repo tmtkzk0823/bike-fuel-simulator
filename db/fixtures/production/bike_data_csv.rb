@@ -1,6 +1,8 @@
 require 'csv'
 
-csv = CSV.read('db/fixtures/csv/bike_data.csv')
+csv_path = Rails.root.join('db', 'fixtures', 'csv', 'bike_data.csv' )
+
+csv = CSV.read(csv_path) # パスが正しく読み込まれないため変数に格納
 i = 1
 
 csv.each do |line|
