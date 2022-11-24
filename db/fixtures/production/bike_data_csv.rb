@@ -33,6 +33,6 @@ csv.each do |line|
     s.cruising_distance = cruising_distance
     s.displacement = displacement
     s.illustration_id = illustration_id
-    s.manufacture_id = manufacturer_id  
+    s.manufacturer_id = manufacturer_id  
   end
 end
