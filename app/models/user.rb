@@ -1,4 +1,9 @@
 class User < ApplicationRecord
-  has_many :user_bikes, dependent: :destroy
-  has_many :visited_places, dependent: :destroy
+# Include default devise modules.
+devise :database_authenticatable, :registerable,
+        :recoverable, :rememberable, :trackable, :validatable,
+        :confirmable, :omniauthable
+include DeviseTokenAuth::Concerns::User
+has_many :visited_places, dependent: :destroy
+has_many :user_bikes, dependent: :destroy
 end
