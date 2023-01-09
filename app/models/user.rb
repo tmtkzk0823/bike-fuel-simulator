@@ -22,5 +22,5 @@ class User < ApplicationRecord
 
   has_many :visited_places, dependent: :destroy
   has_many :user_bikes, dependent: :destroy
-  has_many :bikes, through: :bikes
+  has_many :bikes, through: :user_bikes
 end
