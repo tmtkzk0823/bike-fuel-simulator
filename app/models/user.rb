@@ -23,12 +23,4 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
-  def my_bike(bike)
-    my_bikes << bike
-  end
-
-  def unmy_bike(bike)
-    my_bike.delete(bike)
-  end
 end
