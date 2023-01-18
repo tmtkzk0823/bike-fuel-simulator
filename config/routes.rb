@@ -14,7 +14,7 @@ Rails.application.routes.draw do
         resources :bikes, only: %i[index]
       end
 
-      resources :user_bikes, only: %i[create destroy]
+      resources :user_bikes, only: %i[ create destroy ]
     end
   end
 end
