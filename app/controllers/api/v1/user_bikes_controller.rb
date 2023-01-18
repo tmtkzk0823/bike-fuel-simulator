@@ -3,21 +3,23 @@ class Api::V1::UserBikesController < ApplicationController
 
   def create
     if current_user 
-      current_user.user_bikes.create!(user_bike_paramas)
-      user_bikes = UserBike.where(user_id: current_user.id)
+      current_user.user_bikes.create!(user_bike_params)
+      user_bikes = current_user.my_bikes
       render json: user_bikes
+    else
+      render json: { message: '保存できませんでした' }
     end
+  end
 
   def destroy
     user_bike = UserBike.find(params[:id])
     user_bike.destroy
     render json: user_bike
-
   end
 
   private
 
-  def user_bike_paramas
+  def user_bike_params
     params.require(:user_bike).permit(:bike_id)
   end
 end
