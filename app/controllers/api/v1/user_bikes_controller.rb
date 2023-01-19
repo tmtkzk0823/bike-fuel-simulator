@@ -1,6 +1,12 @@
 class Api::V1::UserBikesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+
+  def user_have_bikes
+    user_bikes = current_user.my_bikes
+    render json: user_bikes
+  end
+
   def create
     if current_user 
       current_user.user_bikes.create!(user_bike_params)
@@ -22,4 +28,5 @@ class Api::V1::UserBikesController < ApplicationController
   def user_bike_params
     params.require(:user_bike).permit(:bike_id)
   end
+
 end
