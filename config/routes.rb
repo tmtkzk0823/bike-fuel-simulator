@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       end
 
       resources :user_bikes, only: %i[ create destroy ]
+      get '/user_have_bikes', to: 'user_bikes#user_have_bikes'
     end
   end
 end
