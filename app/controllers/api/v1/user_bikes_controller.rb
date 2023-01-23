@@ -18,9 +18,12 @@ class Api::V1::UserBikesController < ApplicationController
   end
 
   def destroy
-    user_bike = UserBike.find(params[:id])
-    user_bike.destroy
-    render json: user_bike
+    if current_user 
+      user_bike = UserBike.find_by(user_id: current_user.id, bike_id: params[:bike_id])
+      user_bike.destroy!
+    else
+      render json: { message: '削除に失敗しました' }
+    end
   end
 
   private
