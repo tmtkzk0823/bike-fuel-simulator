@@ -11,10 +11,10 @@ Rails.application.routes.draw do
       }
 
       resources :manufacturers do
-        resources :bikes, only: %i[index]
+        resources :bikes, only: %i[index] 
       end
 
-      resources :user_bikes, only: %i[ create destroy ]
+      resource :user_bikes, only: %i[ create destroy ]
       get '/user_have_bikes', to: 'user_bikes#user_have_bikes'
     end
   end
