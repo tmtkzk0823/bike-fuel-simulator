@@ -9,17 +9,19 @@ services:
       - .:/bike-fuel-simulator
       - bundle:/usr/local/bundle
     ports:
-      - 3000:3000
+      - "3000:3000"
     depends_on:
       - db
   db:
     image: postgres
     environment:
       POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
     ports:
       - "5432:5432"
     volumes:
       - db-data:/var/lib/postgres
+
 volumes:
   db-data:
   bundle:
