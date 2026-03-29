@@ -10,7 +10,7 @@ RSpec.describe Bike, type: :model do
   end
 
   context 'nameがない場合' do
-    no_name_bike = FactoryBot.build(:bike, name: '')
+    let(:no_name_bike) { FactoryBot.build(:bike, name: '') }
 
     it 'バリデーションが通らないこと' do
       expect(no_name_bike).to be_invalid
